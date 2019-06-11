@@ -7,14 +7,15 @@
     tools:context=".MainActivity">
 
 
-
     <Button
         android:id="@+id/buttonFirstView"
-        android:layout_width="122"
-        android:layout_height="45dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3"
+        android:layout_height="60dp"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="6dp"
         android:enabled="false"
         android:text="@string/buttonFirstView"
         app:layout_constraintEnd_toStartOf="@+id/buttonSecondView"
@@ -24,11 +25,13 @@
 
     <Button
         android:id="@+id/buttonSecondView"
-        android:layout_width="122dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3"
+        android:layout_height="60dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="6dp"
         android:enabled="false"
         android:text="@string/buttonSecondView"
         app:layout_constraintEnd_toStartOf="@+id/buttonResult"
@@ -37,11 +40,13 @@
 
     <Button
         android:id="@+id/buttonResult"
-        android:layout_width="122dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".3"
+        android:layout_height="60dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
         android:enabled="false"
         android:text="@string/buttonResult"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,23 +58,25 @@
         android:layout_width="388dp"
         android:layout_height="535dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
-        android:orientation="vertical"
+        android:background="#02FFF7"
 
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSecondView">
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="77dp">
+            android:layout_height="70sp">
 
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/firstTextNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="24sp"
                 android:hint="Type a number" />
 
         </android.support.design.widget.TextInputLayout>
@@ -82,6 +89,7 @@
                 android:id="@+id/secondTextNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="24sp"
                 android:hint="Type a number" />
         </android.support.design.widget.TextInputLayout>
 
@@ -90,14 +98,13 @@
 
     <LinearLayout
         android:id="@+id/secondLayout"
-        android:layout_width="376dp"
-        android:layout_height="253dp"
+        android:layout_width="377dp"
+        android:layout_height="332dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:background="#F702FF"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSecondView">
@@ -106,6 +113,8 @@
             android:id="@+id/editTextNumber1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25sp"
+            android:layout_marginLeft="24dp"
             android:ems="10"
             android:inputType="number" />
 
@@ -113,6 +122,8 @@
             android:id="@+id/editTextNumber2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="45sp"
             android:ems="10"
             android:inputType="number" />
 
@@ -136,14 +147,14 @@
 
         <TextView
             android:id="@+id/textViewLayout3"
-            android:layout_marginTop="55dp"
             android:layout_width="match_parent"
             android:layout_height="147dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="60sp"
             android:ems="10"
             android:fontFamily="cursive"
-            android:textSize="24sp"
-            android:layout_marginLeft="18dp"
-            />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="24sp" />
 
 
     </LinearLayout>

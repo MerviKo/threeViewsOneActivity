@@ -1,9 +1,9 @@
 package com.example.buutti;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.Layout;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
@@ -16,16 +16,13 @@ public class MainActivity extends AppCompatActivity {
     Button firstButton;
     Button secondButton;
     Button submitButton;
-    //Layout firstLayout;
-   // Layout secondLayout;
-    //Layout thirdLayout;
     EditText firstNumber;
     EditText secondNumber;
     EditText thirdNumber;
     EditText fourthNumber;
     TextView sum;
-    int multiplicand =0;
-    int multiplier=0;
+    int multiplicand = 0;
+    int multiplier = 0;
     int activeView = 0;
 
 
@@ -33,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); /*set display portrait*/
         firstButton = findViewById(R.id.buttonFirstView);
         secondButton = findViewById(R.id.buttonSecondView);
         submitButton = findViewById(R.id.buttonResult);
@@ -48,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showViewOne();
-
             }
         });
         secondButton.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
         fourthNumber.addTextChangedListener(numberFieldWatcher);
 
     }
+
+    /************
+     * Check if text changed in the text field and change the added values to integer
+     */
     private TextWatcher numberFieldWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -104,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
-
         }
 
         @Override
@@ -113,6 +113,11 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    /************
+     * Boolean isStingInt
+     * @param s
+     * @return show toast to user if tried to insert letters
+     */
     public boolean isStringInt(String s)
     {
         try
@@ -130,6 +135,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /****
+     * function showViewOne set view one visible and set submitButton and secondButton true
+     */
     private void showViewOne(){
         findViewById(R.id.secondLayout).setVisibility(View.GONE);
         findViewById(R.id.thirdLayout).setVisibility(View.GONE);
@@ -148,6 +156,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /****
+     * function showViewTwo set view two visible and set firstButton and submitButton true
+     */
     private void showViewTwo(){
         findViewById(R.id.secondLayout).setVisibility(View.VISIBLE);
         findViewById(R.id.firstLayout).setVisibility(View.GONE);
@@ -164,9 +175,12 @@ public class MainActivity extends AppCompatActivity {
         {
             submitButton.setEnabled(false);
         }
-
     }
 
+    /****
+     * function showViewThree set view three visible and set firstButton and secondButton true
+     * calculates the given numbers
+     */
     private void showViewThree(){
         findViewById(R.id.thirdLayout).setVisibility(View.VISIBLE);
 
@@ -174,13 +188,17 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.secondLayout).setVisibility(View.GONE);
         firstButton.setEnabled(true);
         secondButton.setEnabled(true);
+        submitButton.setEnabled(false);
         activeView =3;
         if ((multiplicand >= 0) && (multiplier >=0)){
             int summary = multiplicand* multiplier;
-            sum.setText("Result is: "+summary);
+            sum.setText("Result is: " + summary);
         }
     }
 
+    /*******
+     * onStart display firstLayout
+     */
 
     @Override
     public void onStart(){
@@ -190,6 +208,9 @@ public class MainActivity extends AppCompatActivity {
         secondButton.setEnabled(true);
     }
 
+    /*******
+     * onResume display the last activated view
+     */
     @Override
     public void onResume(){
         super.onResume();
@@ -205,8 +226,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onPause(){
         super.onPause();
-
     }
+
     @Override
     public void onStop(){
         super.onStop();
