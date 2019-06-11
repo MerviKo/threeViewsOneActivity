@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Buutti</string>
+    <string name="buttonFirstView">Show 1. View</string>
+    <string name="buttonSecondView">Show 2. View</string>
+    <string name="buttonResult">Submit</string>
+
+</resources>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <Button
+        android:id="@+id/buttonFirstView"
+        android:layout_width="122"
+        android:layout_height="45dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="10dp"
+        android:enabled="false"
+        android:text="@string/buttonFirstView"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSecondView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSecondView"
+        android:layout_width="122dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
+        android:enabled="false"
+        android:text="@string/buttonSecondView"
+        app:layout_constraintEnd_toStartOf="@+id/buttonResult"
+        app:layout_constraintStart_toEndOf="@+id/buttonFirstView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonResult"
+        android:layout_width="122dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
+        android:enabled="false"
+        android:text="@string/buttonResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonSecondView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/firstLayout"
+        android:layout_width="388dp"
+        android:layout_height="535dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSecondView">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="77dp">
+
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/firstTextNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Type a number" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/secondTextNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Type a number" />
+        </android.support.design.widget.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/secondLayout"
+        android:layout_width="376dp"
+        android:layout_height="253dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSecondView">
+
+        <EditText
+            android:id="@+id/editTextNumber1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editTextNumber2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/thirdLayout"
+        android:layout_width="397dp"
+        android:layout_height="556dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSecondView">
+
+
+        <TextView
+            android:id="@+id/textViewLayout3"
+            android:layout_marginTop="55dp"
+            android:layout_width="match_parent"
+            android:layout_height="147dp"
+            android:ems="10"
+            android:fontFamily="cursive"
+            android:textSize="24sp"
+            android:layout_marginLeft="18dp"
+            />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
